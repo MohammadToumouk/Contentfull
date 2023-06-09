@@ -10,6 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.4.0",
+    "axios": "^1.4.0",
+    "contentful": "^10.2.3",
+    "google-map-react": "^2.2.1",
+    "mdb-react-ui-kit": "^6.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -21,6 +26,7 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
+    "tailwindcss": "^3.3.2",
     "vite": "^4.3.9"
   }
 }
