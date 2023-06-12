@@ -9,6 +9,8 @@ import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import ContentfulApi from './components/contentful/Contentful'
 import CategoryFilter from './components/categoryFilter/CategoryFilter'
+import MyMap from './components/map/Mapbox'
+import AlabamaHome from './components/TownHome/Alabama'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -17,9 +19,11 @@ function App() {
     <>
     <CategoryFilter />
     <ContactForm />
-    <Map />
     <Footer />
     <ContentfulApi />
+    <MyMap />
+    <AlabamaHome />
+    
     
       
     </>
