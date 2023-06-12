@@ -19,10 +19,12 @@ import Landingpage from './pages/LandingPage/Landingpage';
 import ListingPage from './pages/ListingPage/ListingPage';
 import TeamPage from './pages/TeamPage/TeamPage';
 import PropertyPage from './pages/PropertyPage/PropertyPage';
+import AmenitiesFilter from './components/amenities/AmenitiesFilter';
+import AmenitiesList from './components/amenities/AmenitiesList';
 
 function App() {
   const [properties, setProperties] = useState([])
-  const [agents, setAgents] = useState([])
+  const [agents, setAgents] = useState([])  
 
   const client = createClient({
     space: '5bdhq9idx46g',
@@ -61,6 +63,9 @@ function App() {
 
   return (
     <>
+    <CategoryFilter propertyData={properties} />
+    <AmenitiesFilter propertyData={properties} />
+    <AmenitiesList propertyData={properties} />
     <BrowserRouter>
       <Routes>
         <Route path="/" >

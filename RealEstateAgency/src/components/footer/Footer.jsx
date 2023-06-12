@@ -1,5 +1,19 @@
 import React, { useState } from 'react';
 import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-kit';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#FFA500', // Orange color
+      contrastText: '#fff', // White text
+    },
+    secondary: {
+      main: '#FFD700', // Gold color
+      contrastText: '#000', // Black text
+    },
+  },
+});
 
 export default function Footer() {
 
@@ -8,7 +22,8 @@ export default function Footer() {
 
 
   return (
-    <MDBFooter bgColor='light' className='text-center text-lg-start text-muted'>
+    <ThemeProvider theme={theme}>
+    <MDBFooter bgColor='red' className='text-center text-lg-start text-muted'>
       <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'>
         <div className='me-5 d-none d-lg-block'>
           <span>Get connected with us on social networks:</span>
@@ -125,5 +140,6 @@ export default function Footer() {
         
       </div>
     </MDBFooter>
+    </ThemeProvider>
   );
 }

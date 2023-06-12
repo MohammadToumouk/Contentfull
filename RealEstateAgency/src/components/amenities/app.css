@@ -1,0 +1,14 @@
+.amenities{
+    display: flex;
+    flex-direction: row;
+    
+    gap: 15px;
+}
+
+
+li{
+    color: rgb(211, 180, 5);
+    font-size: 26px;
+    background-size: 30px;
+    
+}
