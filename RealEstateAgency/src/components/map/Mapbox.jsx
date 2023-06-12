@@ -8,8 +8,6 @@
         
     return (
         <>
-        
-        
         <Map
         initialViewState={{
             longitude: -122.4,
@@ -27,8 +25,6 @@
              </Marker>
 
         </Map>
-        
-        
         </>
     );
     
