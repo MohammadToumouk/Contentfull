@@ -11,6 +11,7 @@ import ContentfulApi from './components/contentful/Contentful'
 import CategoryFilter from './components/categoryFilter/CategoryFilter'
 import MyMap from './components/map/Mapbox'
 import AlabamaHome from './components/TownHome/Alabama'
+import Homealabama from './components/TownHome/Homealamba'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -23,6 +24,7 @@ function App() {
     <ContentfulApi />
     <MyMap />
     <AlabamaHome />
+    <Homealabama />
     
     
       

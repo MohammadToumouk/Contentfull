@@ -1,7 +1,7 @@
 import { createClient } from "contentful";
 import React, { useState, useEffect } from "react";
 
-const AlabamaHome = () => {
+const Homealabama = () => {
   const [content, setContent] = useState([]);
   const [description, setDescription] = useState("");
 
@@ -12,28 +12,25 @@ const AlabamaHome = () => {
   });
 
   useEffect(() => {
-    const getAllEntries = async () => {
+    const getEntry = async () => {
       try {
-        const entries = await client.getEntries({
-          content_type: 'testBlog',
-          select: 'fields'
+        await client.getEntry('5qHG0ZjEEp6Pboc4TMrAn5').then((entry) => {
+          setContent(entry);
+          console.log(entry);
         });
-        console.log(entries.items);
       } catch (error) {
         console.log(`Error: ${error}`);
       }
     };
-    getAllEntries();
+    getEntry();
   }, []);
 
-  return (
-    <div>
-      {content.map((item) => (
-        <p key={item.sys.id}>{item.fields.description}</p>
-      ))}
-    </div>
-  );
+  return 
 };
 
-export default AlabamaHome;
+export default Homealabama;
+    
+
+
+
 
