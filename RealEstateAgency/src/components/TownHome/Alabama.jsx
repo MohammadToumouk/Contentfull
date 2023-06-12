@@ -14,7 +14,7 @@ const AlabamaHome = () => {
   useEffect(() => {
     const getAllEntries = async () => {
       try {
-        await client.getEntries().then((entries) => {
+        await client.getEntries({content_type: "testBlog"}).then((entries) => {
           setContent(entries.items);
           console.log(entries.items);
         });
