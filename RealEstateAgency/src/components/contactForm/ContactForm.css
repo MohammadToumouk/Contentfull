@@ -1,16 +1,18 @@
-.contactContainer{
+.contactContainer {
     display: flex;
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
     margin-bottom: 20px;
 }
-form{
+
+form {
     margin-right: 10%;
     margin-top: 2%;
     width: 400px;
 }
-img{
+
+/* img{
     border-radius: 25px;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-}
+} */

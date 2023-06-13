@@ -1,4 +1,6 @@
 import React from 'react'
+import Navbar from '../../components/navbar/Navbar'
+import CategoryCards from '../../components/categorycards/categorycards'
 import Footer from '../../components/footer/Footer'
 import ContactForm from '../../components/contactForm/ContactForm'
 
@@ -6,10 +8,11 @@ const Landingpage = () => {
 
   return (
     <div>
-      {/* <Navbar /> */}
+      <Navbar />
       {/* <Slider /> */}
-      {/* <CategoryCards /> */}
-      <ContactForm /> 
+      <h1>We help you find you dream home!</h1>
+      <CategoryCards />
+      <ContactForm />
       <Footer />
     </div>
   )

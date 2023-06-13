@@ -24,7 +24,7 @@ import AmenitiesList from './components/amenities/AmenitiesList';
 
 function App() {
   const [properties, setProperties] = useState([])
-  const [agents, setAgents] = useState([])  
+  const [agents, setAgents] = useState([])
 
   const client = createClient({
     space: '5bdhq9idx46g',
@@ -35,7 +35,7 @@ function App() {
   useEffect(() => {
     const getAllPropertiesEntries = async () => {
       try {
-        await client.getEntries({content_type: "testBlog"}).then((entries) => {
+        await client.getEntries({ content_type: "testBlog" }).then((entries) => {
           setProperties(entries.items);
           console.log(entries.items);
         });
@@ -46,7 +46,7 @@ function App() {
 
     const getAllAgentsEntries = async () => {
       try {
-        await client.getEntries({content_type: "agents"}).then((entries) => {
+        await client.getEntries({ content_type: "agents" }).then((entries) => {
           setAgents(entries.items);
         });
       } catch (error) {
@@ -63,25 +63,25 @@ function App() {
 
   return (
     <>
-    <CategoryFilter propertyData={properties} />
-    <AmenitiesFilter propertyData={properties} />
-    <AmenitiesList propertyData={properties} />
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" >
-          <Route index element={<Landingpage />} />
-          <Route path="listing" element={<ListingPage propertyData={properties} />} />
-          <Route path="footer" element={<Footer />} />
-          <Route path="property" element={<PropertyPage />} />
-          <Route path="team" element={<TeamPage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+      {/* <CategoryFilter propertyData={properties} />
+      <AmenitiesFilter propertyData={properties} />
+      <AmenitiesList propertyData={properties} /> */}
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" >
+            <Route index element={<Landingpage />} />
+            <Route path="listing" element={<ListingPage propertyData={properties} />} />
+            <Route path="footer" element={<Footer />} />
+            <Route path="property" element={<PropertyPage />} />
+            <Route path="team" element={<TeamPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
 
 
-    
-    
-    {/* <CategoryFilter />
+
+
+      {/* <CategoryFilter />
     <ContactForm />
     <Footer />
     <ContentfulApi />
