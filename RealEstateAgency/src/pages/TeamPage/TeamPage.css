@@ -1,0 +1,12 @@
+
+.agentBigContainer{
+    background-color: rgb(255, 255, 255);
+    
+}
+
+.agentContainer{
+    background-color: rgba(187, 187, 187, 0.432);
+    margin: 25px 0;
+    display: flex;
+    flex-direction: row;
+}
