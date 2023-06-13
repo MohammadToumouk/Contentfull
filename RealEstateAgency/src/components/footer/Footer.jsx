@@ -12,8 +12,8 @@ export default function Footer() {
 
   return (
 
-    <ThemeProvider theme={theme}>
-    <MDBFooter  className='text-center text-lg-start text-muted'>
+    
+    
 
     
     <MDBFooter  className='text-center text-lg-start text-muted custom-footer'>

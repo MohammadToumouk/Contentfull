@@ -65,11 +65,17 @@ function App() {
   return (
     <>
 
-    <ContactForm />
-    <Footer />
-    <ContentfulApi />
-    <MyMap />
-    <AlabamaHome /> */}
+<BrowserRouter>
+        <Routes>
+          <Route path="/" >
+            <Route index element={<Landingpage />} />
+            <Route path="listing" element={<ListingPage propertyData={properties} />} />
+            <Route path="footer" element={<Footer />} />
+            <Route path="property" element={<PropertyPage />} />
+            <Route path="team" element={<TeamPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
 
     </>
   )
