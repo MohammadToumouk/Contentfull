@@ -1,9 +1,13 @@
 .contactContainer {
     display: flex;
+    
+    padding: 10px;
     flex-direction: row;
     width: 100%;
-    justify-content: space-between;
-    margin-bottom: 20px;
+    justify-content: space-around;
+    
+    
+   
 }
 
 form {
@@ -11,7 +15,73 @@ form {
     margin-top: 2%;
     width: 400px;
 }
+.contactImage{
+    width: 100%;
+    position: relative;
+    margin: 0;
+    margin-left: 60%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    border-radius: 15px;
+}
+.border{
+    margin: 5vh 15%;
+    
+    border-top: #B4A68B solid 1px;
+    
+}
 
+
+
+/* CSS */
+.button-59 {
+    
+  align-items: center;
+  background-color: #fff;
+  border: 2px solid #B4A68B;
+  box-sizing: border-box;
+  color: #000;
+  cursor: pointer;
+  display: inline-flex;
+  fill: #000;
+  font-family: Inter,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: -.8px;
+  line-height: 24px;
+  min-width: 140px;
+  outline: 0;
+  padding: 0 17px;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-59:focus {
+  color: #171e29;
+}
+
+.button-59:hover {
+  border-color: #B4A68B;
+  color: #B4A68B;
+  fill: #B4A68B;
+}
+
+.button-59:active {
+  border-color: #B4A68B;
+  color: #B4A68B;
+  fill: #B4A68B;
+}
+
+@media (min-width: 768px) {
+  .button-59 {
+    min-width: 170px;
+  }
+}
 /* img{
     border-radius: 25px;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
