@@ -1,11 +1,10 @@
 .custom-footer {
     background-color: #B4A68B;
+    margin-top: 10vh;
     
   }
-  h6, p{
+  h6, p, span{
     color: whitesmoke;
   }
-  .btnSend{
-    background-color: #B4A68B;
-  }
+
   
