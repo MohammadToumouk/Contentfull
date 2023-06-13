@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { MDBBtn, MDBBtnGroup } from 'mdb-react-ui-kit';
 import './CategoryFilter.css';
+import ListingCards from '../listingcards/listingCards';
 
 export default function CategoryFilter({ propertyData }) {
   const [filteredData, setFilteredData] = useState(null);
@@ -23,12 +24,22 @@ export default function CategoryFilter({ propertyData }) {
         </MDBBtnGroup>
       ))}
 
+<div className="cardsContainer">
       {filteredData?.map((property) => (
-        <div key={property.sys.id}>
-          <p>{property.fields.name}</p>
-          <p>{property.fields.bedrooms}</p>
-        </div>
+      <ListingCards
+      key={property.sys.id} 
+      id={property.sys.id}
+      image={property?.fields?.image?.fields?.file?.url}
+
+      propertyName={property?.fields?.name}
+
+      propertyInfos={`${property?.fields?.bedrooms} bed • ${property?.fields?.bath} bath • ${property?.fields?.propertySize}sqm`}
+
+      price={`${property?.fields?.price} €`}
+    />
       ))}
+      
     </div>
+  </div>
   );
 }
