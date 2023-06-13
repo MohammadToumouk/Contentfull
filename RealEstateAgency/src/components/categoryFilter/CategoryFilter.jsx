@@ -4,7 +4,7 @@ import './CategoryFilter.css';
 
 
 export default function CategoryFilter({propertyData}) {
-  console.log(propertyData[1])
+  //console.log(propertyData[1])
   return (
 
  <div>
