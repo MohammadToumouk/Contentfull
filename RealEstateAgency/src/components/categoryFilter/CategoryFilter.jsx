@@ -11,35 +11,31 @@ export default function CategoryFilter({ propertyData }) {
     setFilteredData(filteredResults);
   };
 
+
+  const uniqueCategories = [...new Set(propertyData.map((property) => property.fields.category))];
+
   return (
     <div>
-      {propertyData?.map((property) => (
-        <MDBBtnGroup aria-label='Basic example' key={property.sys.id}>
-          <MDBBtn
-            className='btn btn-light'
-            onClick={() => handleClick(property.fields.category)}
-          >
-            {property.fields.category}
+      {uniqueCategories.map((category) => (
+        <MDBBtnGroup aria-label='Basic example' key={category}>
+          <MDBBtn className='btn btn-light' onClick={() => handleClick(category)}>
+            {category}
           </MDBBtn>
         </MDBBtnGroup>
       ))}
 
-<div className="cardsContainer">
-      {filteredData?.map((property) => (
-      <ListingCards
-      key={property.sys.id} 
-      id={property.sys.id}
-      image={property?.fields?.image?.fields?.file?.url}
-
-      propertyName={property?.fields?.name}
-
-      propertyInfos={`${property?.fields?.bedrooms} bed • ${property?.fields?.bath} bath • ${property?.fields?.propertySize}sqm`}
-
-      price={`${property?.fields?.price} €`}
-    />
-      ))}
-      
+      <div className="cardsContainer">
+        {filteredData?.map((property) => (
+          <ListingCards
+            key={property.sys.id}
+            id={property.sys.id}
+            image={property?.fields?.image?.fields?.file?.url}
+            propertyName={property?.fields?.name}
+            propertyInfos={`${property?.fields?.bedrooms} bed • ${property?.fields?.bath} bath • ${property?.fields?.propertySize}sqm`}
+            price={`${property?.fields?.price} €`}
+          />
+        ))}
+      </div>
     </div>
-  </div>
   );
 }
