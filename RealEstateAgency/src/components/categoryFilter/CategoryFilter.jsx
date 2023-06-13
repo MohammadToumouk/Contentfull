@@ -5,16 +5,10 @@ import './CategoryFilter.css';
 export default function CategoryFilter({ propertyData }) {
   const [filteredData, setFilteredData] = useState(null);
 
-
-export default function CategoryFilter({propertyData}) {
-  //console.log(propertyData[1])
-  return (
-
   const handleClick = (category) => {
     const filteredResults = propertyData.filter((property) => property.fields.category === category);
     setFilteredData(filteredResults);
   };
-
 
   return (
     <div>
