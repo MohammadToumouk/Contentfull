@@ -15,9 +15,9 @@ const ListingPage = ({ propertyData}) => {
 
 
   return (
-    <div>
+    <div className='listingPage'>
       <Navbar />
-      <h1>Listing All Properties by filter Page</h1>
+      <h1 className='listingpageH1'>Listing All Properties by filter Page</h1>
       <CategoryFilter propertyData={propertyData}/>
       <Footer />
     </div>

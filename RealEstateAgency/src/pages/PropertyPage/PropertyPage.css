@@ -1,0 +1,13 @@
+.sizeBBList{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    font-size: 16px;
+    
+}
+.propertyContainer{
+    text-align: center;
+    width: 100%;
+   padding: 0 22%;
+   
+}
