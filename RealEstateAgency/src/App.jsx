@@ -66,8 +66,8 @@ function App() {
       {/* <CategoryFilter propertyData={properties} />
       <AmenitiesFilter propertyData={properties} />
       <AmenitiesList propertyData={properties} /> */}
-      
-     <BrowserRouter>
+
+      <BrowserRouter>
         <Routes>
           <Route path="/" >
             <Route index element={<Landingpage />} />
@@ -79,7 +79,7 @@ function App() {
         </Routes>
       </BrowserRouter>
 
-{/* <CategoryFilter />
+      {/* <CategoryFilter />
     <ContactForm />
     <Footer />
     <ContentfulApi />
