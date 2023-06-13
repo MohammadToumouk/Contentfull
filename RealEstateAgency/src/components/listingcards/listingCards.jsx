@@ -6,7 +6,7 @@ import './listingcards.css';
 function ListingCards({ id, image, propertyName, propertyInfos, price }) {
     return (
         <div className='cardsContainer'>
-            <Link to={{pathname: `/property/${id}`, state: { data: {id} }}}>
+            <Link to={{pathname:`/property/${id}`, state: { data: {id} }}}>
             <div className='listingCard'>
                 <img className='listingImage' src={image} />
                 <div className='listingCard-body'>

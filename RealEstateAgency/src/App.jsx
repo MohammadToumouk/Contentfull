@@ -73,7 +73,7 @@ function App() {
             <Route index element={<Landingpage />} />
             <Route path="listing" element={<ListingPage propertyData={properties} />} />
             <Route path="footer" element={<Footer />} />
-            <Route path="property/:id" element={<PropertyPage propertyData={properties} id=":id"/>} />
+            <Route path="property/:id" element={<PropertyPage propertyData={properties}/>} />
             <Route path="team" element={<TeamPage />} />
           </Route>
         </Routes>
