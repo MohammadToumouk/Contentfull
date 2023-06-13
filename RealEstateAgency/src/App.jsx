@@ -1,12 +1,8 @@
 import './App.css'
 import { useState, useEffect } from 'react'
-
 import { createClient } from "contentful";
-
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-import Map from './components/map/Map'
 import Footer from './components/footer/Footer'
 import ContactForm from './components/contactForm/ContactForm'
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
@@ -22,9 +18,14 @@ import PropertyPage from './pages/PropertyPage/PropertyPage';
 import AmenitiesFilter from './components/amenities/AmenitiesFilter';
 import AmenitiesList from './components/amenities/AmenitiesList';
 
+
 function App() {
   const [properties, setProperties] = useState([])
   const [agents, setAgents] = useState([])  
+  const [location, setLocation] = useState([]);
+  const [long, setLong] = useState(0);
+  const [lat, setLat] = useState(0);
+   
 
   const client = createClient({
     space: '5bdhq9idx46g',
@@ -37,7 +38,10 @@ function App() {
       try {
         await client.getEntries({content_type: "testBlog"}).then((entries) => {
           setProperties(entries.items);
-          console.log(entries.items);
+          setLocation(entries.items[2].fields.location)
+          setLong(entries.items[3].fields.location.lon)
+          setLat(entries.items[3].fields.location.lat)
+          
         });
       } catch (error) {
         console.log(`Error: ${error}`);
@@ -58,14 +62,16 @@ function App() {
     getAllPropertiesEntries();
   }, []);
 
-
-  //console.log(properties)
+  console.log(location)
+  
+  console.log(properties)
 
   return (
     <>
-    <CategoryFilter propertyData={properties} />
-    <AmenitiesFilter propertyData={properties} />
-    <AmenitiesList propertyData={properties} />
+    <MyMap long={long} lat={lat} />
+    <AmenitiesFilter propertyData={properties}  />
+    <AmenitiesList  propertyData={properties}  />
+   <CategoryFilter propertyData={properties} />
     <BrowserRouter>
       <Routes>
         <Route path="/" >
@@ -77,6 +83,9 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
+
+
+   
 
 
     

@@ -14,6 +14,12 @@ const theme = createTheme({
       dark: '#ba000d',
       contrastText: '#000',
     },
+    mohamedTest: {
+        light: '#ff7961',
+        main: '#f44336',
+        dark: '#ba000d',
+        contrastText: '#000',
+    }
   },
 });
 export default theme;
