@@ -29,7 +29,7 @@
 
 .categoryImage {
     width: 100%;
-    height: 70%;
+    height: 78%;
     object-fit: cover;
 }
 
@@ -40,4 +40,9 @@
     right: 0;
     padding: 10px;
     text-align: center;
+}
+
+h2 {
+    font-family: 'Inter';
+    font-size: 1.3rem;
 }

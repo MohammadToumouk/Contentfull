@@ -1,7 +1,7 @@
 import React from 'react'
-import images from "../assets/index.js";
+import images from "../../assets/index";
 import { Link } from 'react-router-dom';
-import '../styles/categorycards.css';
+import './categorycards.css';
 
 function CategoryCards() {
     return (

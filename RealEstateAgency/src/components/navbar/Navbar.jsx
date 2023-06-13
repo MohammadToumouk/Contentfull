@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import Logo from "../assets/emalogo.png";
+import Logo from "../../assets/emalogo.png";
 import { Link } from 'react-router-dom';
-import '../styles/navbar.css';
+import './navbar.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 function Navbar() {
