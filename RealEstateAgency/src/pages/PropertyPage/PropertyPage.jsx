@@ -7,10 +7,14 @@ import Navbar from '../../components/navbar/Navbar'
 import { useLocation } from 'react-router-dom';
 import { createClient } from "contentful";
 import AmenitiesList from '../../components/amenities/AmenitiesFilter'
+import MyMap from '../../components/map/Mapbox'
+import Footer from '../../components/footer/Footer'
 
 const PropertyPage = () => {
   const [properties, setProperties] = useState([])
   const location = useLocation();
+  const [long, setLong] = useState();
+  const [lat, setLat] = useState();
 
   const client = createClient({
     space: '5bdhq9idx46g',
@@ -22,25 +26,24 @@ const PropertyPage = () => {
     const getPropertyEntry = async () => {
       const pathname = location.pathname;
       const id = pathname.substring(pathname.lastIndexOf('/') + 1);
-     
-       console.log(id)
-     
+  
+      console.log(id);
+  
       try {
-        await client.getEntries({ 'sys.id': id }).then((entries) => {
-          setProperties(entries.items);
-          console.log(entries.items)
-          
-
-        });
+        const entries = await client.getEntries({ 'sys.id': id });
+        setProperties(entries.items);
+        setLong(entries.items[0]?.fields.location?.lon);
+        setLat(entries.items[0]?.fields.location?.lat);
       } catch (error) {
         console.log(`Error: ${error}`);
       }
     };
-
+  
     getPropertyEntry();
   }, []);
 
   console.log(properties)
+  
 
 
   return (
@@ -61,8 +64,10 @@ const PropertyPage = () => {
           <AgentCard image={property?.fields?.agents?.fields?.profilepic?.fields?.file?.url} email={property?.fields?.agents?.fields?.email} />
           <p>{property.fields.description}</p>
           {/* <Mapbox /> */}
+          <MyMap lon={long} lat={lat} />
         </div>
       ))}
+      <Footer />
     </div>
   )
 }

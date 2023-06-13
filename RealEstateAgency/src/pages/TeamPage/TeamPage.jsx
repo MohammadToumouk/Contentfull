@@ -1,12 +1,16 @@
 import React from 'react'
 import ListingCards from '../../components/listingcards/listingCards'
 import './TeamPage.css'
+import Navbar from '../../components/navbar/Navbar'
+import Footer from '../../components/footer/Footer'
+
 
 const TeamPage = ({propertyData}) => {
   console.log(propertyData.sys)
 
   return (
     <>
+    <Navbar />
     <h1>Team Page</h1>
 
     <div className='agentBigContainer'>
@@ -28,6 +32,7 @@ const TeamPage = ({propertyData}) => {
       
       
     </div>
+    <Footer />
     </>
   )
 }

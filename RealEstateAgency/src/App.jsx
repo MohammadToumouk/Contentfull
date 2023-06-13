@@ -36,9 +36,7 @@ function App() {
         await client.getEntries({ content_type: "testBlog" }).then((entries) => {
           setProperties(entries.items);
 
-          setLocation(entries.items[2].fields.location)
-          setLong(entries.items[3].fields.location.lon)
-          setLat(entries.items[3].fields.location.lat)
+          
 
         });
       } catch (error) {
@@ -56,7 +54,7 @@ function App() {
         console.log(`Error: ${error}`);
       }
     };
-
+    
     getAllAgentsEntries();
     getAllPropertiesEntries();
   }, []);
@@ -71,6 +69,7 @@ function App() {
 
       <BrowserRouter>
         <Routes>
+          
           <Route path="/" >
             <Route index element={<Landingpage />} />
             <Route path="listing" element={<ListingPage propertyData={properties} />} />
