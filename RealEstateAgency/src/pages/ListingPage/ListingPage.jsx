@@ -7,7 +7,8 @@ import ListingCards from '../../components/listingcards/listingCards';
 import ImageSliderForProperty from '../../components/ImageSliderForProperty/ImageSliderForProperty';
 
 
-const ListingPage = ({ propertyData }) => {
+const ListingPage = ({ propertyData}) => {
+
 
   console.log(propertyData[1]?.fields.images[0]?.fields.file.url)
 
@@ -22,10 +23,8 @@ const ListingPage = ({ propertyData }) => {
 
         {propertyData?.map((property) => (
 
-
-
           <ListingCards
-            key={property.sys.id} // Add the key prop with a unique value
+            key={property.sys.id} 
             image={property?.fields?.image?.fields?.file?.url}
 
             propertyName={property?.fields?.name}
@@ -34,7 +33,6 @@ const ListingPage = ({ propertyData }) => {
 
             price={`${property?.fields?.price} €`}
           />
-
 
         ))}
 
