@@ -31,10 +31,10 @@ function Navbar() {
             </div>
             <div className='rightSide'>
                 <button className='navButton'>
-                    <Link to='/properties'>Properties</Link>
+                    <Link to='/listing'>Properties</Link>
                 </button>
                 <button className='navButton'>
-                    <Link to='/agents'>Agents</Link>
+                    <Link to='/team'>Agents</Link>
                 </button>
                 <button className='navButton'>
                     <Link to='/contact'>Contact</Link>

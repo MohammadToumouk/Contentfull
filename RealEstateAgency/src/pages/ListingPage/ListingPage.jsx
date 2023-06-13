@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState } from 'react';
 import "./ListingPage.css"
+import Navbar from '../../components/navbar/Navbar.jsx';
+import Footer from '../../components/footer/Footer.jsx';
 import ListingCards from '../../components/listingcards/listingCards';
 import ImageSliderForProperty from '../../components/ImageSliderForProperty/ImageSliderForProperty';
 
@@ -12,6 +14,7 @@ const ListingPage = ({ propertyData }) => {
 
   return (
     <div>
+      <Navbar />
       <h1>Listing All Properties by filter Page</h1>
       <div className="cardsContainer">
         {/* <ImageSliderForProperty images={propertyData[1]?.fields.images[0].fields.file.url} /> */}
@@ -36,6 +39,7 @@ const ListingPage = ({ propertyData }) => {
         ))}
 
       </div>
+      <Footer />
     </div>
   )
 }
