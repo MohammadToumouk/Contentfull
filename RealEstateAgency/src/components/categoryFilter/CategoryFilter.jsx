@@ -1,24 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { MDBBtn, MDBBtnGroup } from 'mdb-react-ui-kit';
 import './CategoryFilter.css';
 
+export default function CategoryFilter({ propertyData }) {
+  const [filteredData, setFilteredData] = useState(null);
 
-export default function CategoryFilter({propertyData}) {
-  console.log(propertyData[1])
+  const handleClick = (category) => {
+    const filteredResults = propertyData.filter((property) => property.fields.category === category);
+    setFilteredData(filteredResults);
+  };
+
   return (
-
- <div>
-      
+    <div>
       {propertyData?.map((property) => (
         <MDBBtnGroup aria-label='Basic example' key={property.sys.id}>
-          <MDBBtn class="btn btn-light">{property.fields.category}</MDBBtn>
+          <MDBBtn
+            className='btn btn-light'
+            onClick={() => handleClick(property.fields.category)}
+          >
+            {property.fields.category}
+          </MDBBtn>
         </MDBBtnGroup>
       ))}
+
+      {filteredData?.map((property) => (
+        <div key={property.sys.id}>
+          <p>{property.fields.name}</p>
+          <p>{property.fields.bedrooms}</p>
+        </div>
+      ))}
     </div>
-
-
-
-    
   );
 }
-
