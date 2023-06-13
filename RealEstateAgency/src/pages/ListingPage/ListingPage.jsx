@@ -6,21 +6,33 @@ import ImageSliderForProperty from '../../components/ImageSliderForProperty/Imag
 
 const ListingPage = ({ propertyData }) => {
 
-  console.log(propertyData[1]?.fields.images[0].fields.file.url)
+  console.log(propertyData[1]?.fields.images[0]?.fields.file.url)
 
   return (
     <div>
       {/* <ImageSliderForProperty images={propertyData[1]?.fields.images[0].fields.file.url} /> */}
       <h1>Listing All Properties by filter Page</h1>
+
       {propertyData?.map((property) => (
         <div key={property.sys.id}>
 
-          <h1>{property.fields.name}</h1>
+          <h1>{property?.fields?.name}</h1>
+
+          <ListingCards
+            image={property?.fields?.image?.fields?.file?.url}
+
+            propertyName={property?.fields?.name}
+
+            propertyInfos={`${property?.fields?.bedrooms} bed • ${property?.fields?.bath} bath • ${property?.fields?.propertySize}`}
+
+            price={property?.fields?.price}
+          />
+
         </div>
       ))}
-      <ListingCards />
+
     </div>
   )
 }
 
-export default ListingPage
+export default ListingPage;
