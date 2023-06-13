@@ -4,9 +4,11 @@ import "./ListingPage.css"
 import ListingCards from '../../components/listingcards/listingCards';
 import ImageSliderForProperty from '../../components/ImageSliderForProperty/ImageSliderForProperty';
 
+
 const ListingPage = ({ propertyData }) => {
 
   console.log(propertyData[1]?.fields.images[0]?.fields.file.url)
+
 
   return (
     <div>

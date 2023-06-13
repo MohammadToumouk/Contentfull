@@ -5,6 +5,7 @@ import Footer from '../../components/footer/Footer'
 import ContactForm from '../../components/contactForm/ContactForm'
 import ImageSlider from '../../components/ImageSlider/ImageSlider'
 
+
 const Landingpage = () => {
 
   return (
