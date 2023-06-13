@@ -4,11 +4,7 @@ import { createClient } from "contentful";
 const ContentfulApi = () => {
 
 
-        const client = createClient({
-            space: '5bdhq9idx46g',
-            environment: 'master', // defaults to 'master' if not set
-            accessToken: 'wG4HFPrxlVdRGbvq1aeA1Q6DmegdYSrPih_hqz3oik8'
-        })
+       
 
 
     const client = createClient({
