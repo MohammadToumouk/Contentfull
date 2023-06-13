@@ -21,6 +21,7 @@ import AmenitiesList from './components/amenities/AmenitiesList';
 
 function App() {
   const [properties, setProperties] = useState([])
+  const [agents, setAgents] = useState([])
 
 
   const client = createClient({
@@ -49,6 +50,7 @@ function App() {
       try {
         await client.getEntries({ content_type: "agents" }).then((entries) => {
           setAgents(entries.items);
+          console.log(agents)
         });
       } catch (error) {
         console.log(`Error: ${error}`);
@@ -74,7 +76,7 @@ function App() {
             <Route path="listing" element={<ListingPage propertyData={properties} />} />
             <Route path="footer" element={<Footer />} />
             <Route path="property/:id" element={<PropertyPage propertyData={properties}/>} />
-            <Route path="team" element={<TeamPage />} />
+            <Route path="team" element={<TeamPage propertyData={agents} />} />
           </Route>
         </Routes>
       </BrowserRouter>
