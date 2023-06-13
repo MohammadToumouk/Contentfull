@@ -1,0 +1,33 @@
+.card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    height: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 450px;
+    background-color: #D8D4BD;
+  }
+  
+  .image {
+    flex: 0 0 120px;
+    margin-right: 10px;
+  }
+  
+  .image img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 100%;
+  }
+  
+  .info {
+    flex: 1;
+  }
+  
+  .info p {
+    margin-bottom: 5px;
+  }
+  

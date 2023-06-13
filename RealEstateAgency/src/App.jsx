@@ -34,10 +34,11 @@ function App() {
       try {
         await client.getEntries({ content_type: "testBlog" }).then((entries) => {
           setProperties(entries.items);
+
           setLocation(entries.items[2].fields.location)
           setLong(entries.items[3].fields.location.lon)
           setLat(entries.items[3].fields.location.lat)
-          
+
         });
       } catch (error) {
         console.log(`Error: ${error}`);
@@ -71,7 +72,7 @@ function App() {
             <Route index element={<Landingpage />} />
             <Route path="listing" element={<ListingPage propertyData={properties} />} />
             <Route path="footer" element={<Footer />} />
-            <Route path="property" element={<PropertyPage />} />
+            <Route path="property" element={<PropertyPage propertyData={properties} />} />
             <Route path="team" element={<TeamPage />} />
           </Route>
         </Routes>

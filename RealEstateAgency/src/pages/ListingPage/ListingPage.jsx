@@ -5,7 +5,7 @@ import ImageSliderForProperty from '../../components/ImageSliderForProperty/Imag
 
 const ListingPage = ({propertyData}) => {
   
-  console.log(propertyData[1]?.fields.images[0].fields.file.url)
+  //console.log(propertyData[1]?.fields.images[0].fields.file.url)
 
   return (
     <div>

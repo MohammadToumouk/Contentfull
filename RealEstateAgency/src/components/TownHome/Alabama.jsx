@@ -16,7 +16,7 @@ const AlabamaHome = () => {
       try {
         await client.getEntries({content_type: "testBlog"}).then((entries) => {
           setContent(entries.items);
-          console.log(entries.items);
+          //console.log(entries.items);
         });
       } catch (error) {
         console.log(`Error: ${error}`);

@@ -31,7 +31,7 @@ const ImageSliderForProperty = ({ images, title, slideDuration = 2500 }) => {
           <img src={images[currentImageIndex].url} alt="Slider" />
         </div>
         <div className="slider-pagination">
-          {images.map((_, index) => (
+          {images?.fields.file.url.map((_, index) => (
             <button
               key={index}
               className={`pagination-dot ${
