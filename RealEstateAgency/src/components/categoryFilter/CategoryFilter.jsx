@@ -3,6 +3,7 @@ import { MDBBtn, MDBBtnGroup } from 'mdb-react-ui-kit';
 import './CategoryFilter.css';
 import ListingCards from '../listingcards/listingCards';
 
+
 export default function CategoryFilter({ propertyData }) {
   const [filteredData, setFilteredData] = useState(null);
 
@@ -18,9 +19,9 @@ export default function CategoryFilter({ propertyData }) {
     <div>
       {uniqueCategories.map((category) => (
         <MDBBtnGroup aria-label='Basic example' key={category}>
-          <MDBBtn className='btn btn-light' onClick={() => handleClick(category)}>
+          <button className='button-59' onClick={() => handleClick(category)}>
             {category}
-          </MDBBtn>
+          </button>
         </MDBBtnGroup>
       ))}
 

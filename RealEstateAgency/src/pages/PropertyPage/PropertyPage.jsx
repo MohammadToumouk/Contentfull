@@ -29,6 +29,7 @@ const PropertyPage = () => {
         await client.getEntries({ 'sys.id': id }).then((entries) => {
           setProperties(entries.items);
           console.log(entries.items)
+          
 
         });
       } catch (error) {
@@ -47,9 +48,15 @@ const PropertyPage = () => {
       <Navbar />
       <h1></h1>
       {properties?.map((property) => (
-        <div key={property.sys.id}>
+        <div className='propertyContainer' key={property.sys.id}>
           <h1>{property.fields.name}</h1>
+          <img src={property.fields.image.fields.file.url}></img>
           <h2>{property.fields.price}</h2>
+          <ul className='sizeBBList'>
+            <li>{property.fields.bedrooms}</li>
+            <li>{property.fields.bath}</li>
+            <li>{property.fields.propertySize}</li>
+          </ul>
     
           <AgentCard image={property?.fields?.agents?.fields?.profilepic?.fields?.file?.url} email={property?.fields?.agents?.fields?.email} />
           <p>{property.fields.description}</p>
