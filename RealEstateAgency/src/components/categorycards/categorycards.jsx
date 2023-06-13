@@ -6,12 +6,19 @@ import './categorycards.css';
 function CategoryCards() {
     return (
         <div className='cardsContainer'>
+            <Link
+              to={{
+                pathname: "/listing",
+                state: { data: "Villa" }
+              }}
+            >        
             <div className='catcard'>
                 <img className='categoryImage' src={images.image1} />
                 <div className='card-body'>
                     <h2>Villa</h2>
                 </div>
             </div>
+            </Link>  
             <div className='catcard'>
                 <img className='categoryImage' src={images.image2} />
                 <div className='card-body'>

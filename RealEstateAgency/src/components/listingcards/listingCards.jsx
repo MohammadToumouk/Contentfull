@@ -3,9 +3,10 @@ import images from "../../assets/index";
 import { Link } from 'react-router-dom';
 import './listingcards.css';
 
-function ListingCards({ image, propertyName, propertyInfos, price }) {
+function ListingCards({ id, image, propertyName, propertyInfos, price }) {
     return (
         <div className='cardsContainer'>
+            <Link to={{pathname: `/property/${id}`, state: { data: {id} }}}>
             <div className='listingCard'>
                 <img className='listingImage' src={image} />
                 <div className='listingCard-body'>
@@ -15,6 +16,7 @@ function ListingCards({ image, propertyName, propertyInfos, price }) {
                     <p className='price'>{price}</p>
                 </div>
             </div>
+            </Link>
         </div>
     )
 }
