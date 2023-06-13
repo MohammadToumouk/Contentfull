@@ -25,7 +25,7 @@ const ListingPage = ({ propertyData }) => {
 
             propertyInfos={`${property?.fields?.bedrooms} bed • ${property?.fields?.bath} bath • ${property?.fields?.propertySize}`}
 
-            price={property?.fields?.price}
+            price={`${property?.fields?.price} €`}
           />
 
         </div>
