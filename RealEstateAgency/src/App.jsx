@@ -21,11 +21,7 @@ import AmenitiesList from './components/amenities/AmenitiesList';
 
 function App() {
   const [properties, setProperties] = useState([])
-  const [agents, setAgents] = useState([])  
-  const [location, setLocation] = useState([]);
-  const [long, setLong] = useState(0);
-  const [lat, setLat] = useState(0);
-   
+
 
   const client = createClient({
     space: '5bdhq9idx46g',
@@ -36,7 +32,7 @@ function App() {
   useEffect(() => {
     const getAllPropertiesEntries = async () => {
       try {
-        await client.getEntries({content_type: "testBlog"}).then((entries) => {
+        await client.getEntries({ content_type: "testBlog" }).then((entries) => {
           setProperties(entries.items);
           setLocation(entries.items[2].fields.location)
           setLong(entries.items[3].fields.location.lon)
@@ -50,7 +46,7 @@ function App() {
 
     const getAllAgentsEntries = async () => {
       try {
-        await client.getEntries({content_type: "agents"}).then((entries) => {
+        await client.getEntries({ content_type: "agents" }).then((entries) => {
           setAgents(entries.items);
         });
       } catch (error) {
@@ -68,29 +64,7 @@ function App() {
 
   return (
     <>
-    <MyMap long={long} lat={lat} />
-    <AmenitiesFilter propertyData={properties}  />
-    <AmenitiesList  propertyData={properties}  />
-   <CategoryFilter propertyData={properties} />
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" >
-          <Route index element={<Landingpage />} />
-          <Route path="listing" element={<ListingPage propertyData={properties} />} />
-          <Route path="footer" element={<Footer />} />
-          <Route path="property" element={<PropertyPage />} />
-          <Route path="team" element={<TeamPage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
 
-
-   
-
-
-    
-    
-    {/* <CategoryFilter />
     <ContactForm />
     <Footer />
     <ContentfulApi />
