@@ -11,7 +11,7 @@ export default function ContactForm() {
   return (
     <div className='contactContainer'>
     <div>
-      <img src='https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80' height={"350px"}></img>
+      <img src='https://w0.peakpx.com/wallpaper/837/284/HD-wallpaper-cabin-home-house-mansion.jpg' height={"350px"}></img>
     </div>
     <form>
       <MDBInput id='form4Example1' wrapperClass='mb-4' label='Name' />
@@ -25,7 +25,7 @@ export default function ContactForm() {
         defaultChecked
       />
 
-      <MDBBtn type='submit' className='mb-4' block>
+      <MDBBtn type='submit' className='mb-4 btnSend' block>
         Send
       </MDBBtn>
     </form>
