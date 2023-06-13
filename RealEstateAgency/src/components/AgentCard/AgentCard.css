@@ -1,4 +1,4 @@
-.card {
+.agentCard {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -11,12 +11,12 @@
     background-color: #D8D4BD;
   }
   
-  .image {
+  .agentImage {
     flex: 0 0 120px;
     margin-right: 10px;
   }
   
-  .image img {
+  .agentImage img {
     width: 150px;
     height: 150px;
     object-fit: cover;
