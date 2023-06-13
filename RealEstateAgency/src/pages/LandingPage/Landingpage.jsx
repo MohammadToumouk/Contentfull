@@ -10,7 +10,7 @@ const Landingpage = () => {
     <div>
       <Navbar />
       {/* <Slider /> */}
-      <h1>We help you find you dream home!</h1>
+      <h1>We help you find your dream home!</h1>
       <CategoryCards />
       <ContactForm />
       <Footer />

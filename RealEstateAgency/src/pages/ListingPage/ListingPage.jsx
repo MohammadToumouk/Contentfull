@@ -1,8 +1,8 @@
 import React from 'react'
 import { useState } from 'react';
 
-const ListingPage = ({propertyData}) => {
-  
+const ListingPage = ({ propertyData }) => {
+
   console.log(propertyData[0]?.fields.name)
 
   return (
