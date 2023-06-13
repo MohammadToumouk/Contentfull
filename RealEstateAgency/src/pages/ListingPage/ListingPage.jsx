@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState } from 'react';
 import "./ListingPage.css"
+import Navbar from '../../components/navbar/Navbar.jsx';
+import Footer from '../../components/footer/Footer.jsx';
 import ListingCards from '../../components/listingcards/listingCards';
 import ImageSliderForProperty from '../../components/ImageSliderForProperty/ImageSliderForProperty';
 
@@ -13,29 +15,29 @@ const ListingPage = ({ propertyData}) => {
 
   return (
     <div>
-      {/* <ImageSliderForProperty images={propertyData[1]?.fields.images[0].fields.file.url} /> */}
+      <Navbar />
       <h1>Listing All Properties by filter Page</h1>
+      <div className="cardsContainer">
+        {/* <ImageSliderForProperty images={propertyData[1]?.fields.images[0].fields.file.url} /> */}
 
-      {propertyData?.map((property) => (
-        <div key={property.sys.id}>
-          
 
-          <h1>{property?.fields?.name}</h1>
+        {propertyData?.map((property) => (
 
           <ListingCards
-            id={property.sys.id}
+            key={property.sys.id} 
             image={property?.fields?.image?.fields?.file?.url}
 
             propertyName={property?.fields?.name}
 
-            propertyInfos={`${property?.fields?.bedrooms} bed • ${property?.fields?.bath} bath • ${property?.fields?.propertySize}`}
+            propertyInfos={`${property?.fields?.bedrooms} bed • ${property?.fields?.bath} bath • ${property?.fields?.propertySize}sqm`}
 
             price={`${property?.fields?.price} €`}
           />
-         
-        </div>
-      ))}
 
+        ))}
+
+      </div>
+      <Footer />
     </div>
   )
 }
