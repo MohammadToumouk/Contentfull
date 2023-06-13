@@ -12,27 +12,30 @@ const ListingPage = ({ propertyData }) => {
 
   return (
     <div>
-      {/* <ImageSliderForProperty images={propertyData[1]?.fields.images[0].fields.file.url} /> */}
       <h1>Listing All Properties by filter Page</h1>
+      <div className="cardsContainer">
+        {/* <ImageSliderForProperty images={propertyData[1]?.fields.images[0].fields.file.url} /> */}
 
-      {propertyData?.map((property) => (
-        <div key={property.sys.id}>
 
-          <h1>{property?.fields?.name}</h1>
+        {propertyData?.map((property) => (
+
+
 
           <ListingCards
+            key={property.sys.id} // Add the key prop with a unique value
             image={property?.fields?.image?.fields?.file?.url}
 
             propertyName={property?.fields?.name}
 
-            propertyInfos={`${property?.fields?.bedrooms} bed • ${property?.fields?.bath} bath • ${property?.fields?.propertySize}`}
+            propertyInfos={`${property?.fields?.bedrooms} bed • ${property?.fields?.bath} bath • ${property?.fields?.propertySize}sqm`}
 
             price={`${property?.fields?.price} €`}
           />
 
-        </div>
-      ))}
 
+        ))}
+
+      </div>
     </div>
   )
 }

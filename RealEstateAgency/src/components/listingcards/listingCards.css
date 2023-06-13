@@ -2,17 +2,20 @@
     cursor: pointer;
     display: flex;
     flex: row;
-    flex-wrap: wrap;
-
+    margin-left: 50px;
+    margin-right: 5ch;
 }
 
 .listingCard {
     display: flex;
     flex-direction: column;
     width: 350px;
-
     height: 400px;
     background-color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    position: relative;
 
     color: #463118;
     border-radius: 5px;

@@ -60,7 +60,7 @@ function App() {
   }, []);
 
   console.log(location)
-  
+
   console.log(properties)
 
   return (
@@ -69,7 +69,7 @@ function App() {
       <AmenitiesFilter propertyData={properties} />
       <AmenitiesList propertyData={properties} /> */}
 
-     <BrowserRouter>
+      <BrowserRouter>
         <Routes>
           <Route path="/" >
             <Route index element={<Landingpage />} />
