@@ -1,10 +1,13 @@
 {
   "name": "realestateagency",
   "private": true,
+  "homepage": "https://MohammadToumouk.github.io/Contentfull/realestateagency",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "predeploy": "npm run build",
+    "deploy": "realestateagency -d build",
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
