@@ -1,12 +1,15 @@
 import React from 'react'
 import { useState } from 'react';
+import "./ListingPage.css"
+import ImageSliderForProperty from '../../components/ImageSliderForProperty/ImageSliderForProperty';
 
 const ListingPage = ({propertyData}) => {
   
-  console.log(propertyData[0]?.fields.name)
+  console.log(propertyData[1]?.fields.images[0].fields.file.url)
 
   return (
     <div>
+      {/* <ImageSliderForProperty images={propertyData[1]?.fields.images[0].fields.file.url} /> */}
       <h1>Listing All Properties by filter Page</h1>
       {propertyData?.map((property) => (
         <div key={property.sys.id}>

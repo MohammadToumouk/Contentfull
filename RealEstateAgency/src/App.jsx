@@ -63,9 +63,9 @@ function App() {
 
   return (
     <>
-    <CategoryFilter propertyData={properties} />
+    {/* <CategoryFilter propertyData={properties} />
     <AmenitiesFilter propertyData={properties} />
-    <AmenitiesList propertyData={properties} />
+    <AmenitiesList propertyData={properties} /> */}
     <BrowserRouter>
       <Routes>
         <Route path="/" >
