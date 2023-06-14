@@ -4,6 +4,7 @@ import './ImageSliderForProperty.css';
 const ImageSliderForProperty = ({ images, title, slideDuration = 2500 }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+  console.log("imgaes of Property", images)
     
   useEffect(() => {
     const timer = setInterval(goToNextSlide, slideDuration);
@@ -28,10 +29,10 @@ const ImageSliderForProperty = ({ images, title, slideDuration = 2500 }) => {
       <div className="slider">
         <div className="slider-image">
         <div className="slider-overlay"></div>
-          <img src={images[currentImageIndex].url} alt="Slider" />
+          <img src={images?.fields?.file?.url} alt="Slider" />
         </div>
         <div className="slider-pagination">
-          {images?.fields.file.url.map((_, index) => (
+          {images.map((_, index) => (
             <button
               key={index}
               className={`pagination-dot ${

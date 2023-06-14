@@ -45,8 +45,8 @@ const ImageSlider = ({ title = "Luxury Living at its Finest. Find Your Haven.", 
     <div className="slider-container">
       <div className="slider">
         <div className="slider-image">
-        <div className="slider-overlay"></div>
-          <img src={images[currentImageIndex].url} alt="Slider" />
+        <div className="slider-overlay" id='testTest'></div>
+          <img id='carouselImages' src={images[currentImageIndex].url} alt="Slider" />
         </div>
         <div className="slider-pagination">
           {images.map((_, index) => (

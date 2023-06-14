@@ -32,8 +32,8 @@ const PropertyPage = () => {
       try {
         const entries = await client.getEntries({ 'sys.id': id });
         setProperties(entries.items);
-        setLong(entries.items[0]?.fields.location?.lon);
-        setLat(entries.items[0]?.fields.location?.lat);
+        setLong(entries.items[0]?.fields?.location?.lon);
+        setLat(entries.items[0]?.fields?.location?.lat);
       } catch (error) {
         console.log(`Error: ${error}`);
       }
@@ -42,7 +42,10 @@ const PropertyPage = () => {
     getPropertyEntry();
   }, []);
 
-  console.log(properties)
+  console.log(properties[0]?.fields?.images[0].fields.file.url)
+  console.log(lat)
+  console.log(long)
+  
   
 
 
@@ -50,10 +53,15 @@ const PropertyPage = () => {
     <div>
       <Navbar />
       <h1></h1>
+      {/* {properties[0]?.fields?.images?.map((images) => (
+        <img src={images?.fields?.file?.url} />
+        <ImageSliderForProperty images={images} />  
+       ))} */}
       {properties?.map((property) => (
         <div className='propertyContainer' key={property.sys.id}>
           <h1>{property.fields.name}</h1>
           <img src={property.fields.image.fields.file.url}></img>
+          
           <h2>{property.fields.price}</h2>
           <ul className='sizeBBList'>
             <li>{property.fields.bedrooms}</li>
@@ -64,11 +72,11 @@ const PropertyPage = () => {
           <AgentCard image={property?.fields?.agents?.fields?.profilepic?.fields?.file?.url} email={property?.fields?.agents?.fields?.email} />
           <p>{property.fields.description}</p>
           {/* <Mapbox /> */}
-          <MyMap lon={long} lat={lat} />
+          <MyMap long={long} lat={lat} />
         </div>
       ))}
-      <Footer />
+      <Footer />  
     </div>
   )
 }
-export default PropertyPage
+export default PropertyPage 
