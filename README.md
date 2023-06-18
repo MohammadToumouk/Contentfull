@@ -1,9 +1,3 @@
-## Tech Stack
-
-- Programming Languages: Python, JavaScript, Java
-- Web Development: HTML, CSS, React
-- Databases: MySQL, PostgreSQL
-
 
 # README
 
