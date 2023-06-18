@@ -1,3 +1,10 @@
+## Tech Stack
+
+- Programming Languages: Python, JavaScript, Java
+- Web Development: HTML, CSS, React
+- Databases: MySQL, PostgreSQL
+
+
 # README
 
 This is a basic README template for a React project using Vite as the build tool.
